@@ -5,6 +5,12 @@
 
 # 1. write code to display each contact (you can reuse the previous lab's code) and include the contact's company name, e.g.:
 
+#puts "Contacts: #{Contact.all.count}"
+
+#contacts = Contact.all
+#for contact in contacts
+ #   puts "#{contact.first_name} #{contact.last_name} - #{contact.email}"
+#end
 # ---------------------------------
 # Contacts: 4
 # Andy Jassy - andy@amazon.com - Amazon.com, Inc.
@@ -13,6 +19,19 @@
 # Tim Cook - tim@apple.com - Apple Inc.
 
 # 2. similar to above, but this time organized by company, write code to display each company (name) and its contacts, e.g.:
+contacts = Contact.all
+companies = Company.all
+
+puts "Contacts: #{Contact.all.count}"
+
+for company in companies
+    puts company.name
+    contacts = company.contacts
+    for contact in contacts
+        puts "#{contact.first_name} #{contact.last_name} - #{contact.email}"
+    end
+    puts " "
+end
 
 # ---------------------------------
 # Apple Inc.
